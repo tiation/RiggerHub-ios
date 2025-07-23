@@ -1,0 +1,14 @@
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/ContentView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Models/Job.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Models/User.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/AuthenticationManager.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/JobManager.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/APIService.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/LoginView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobsListView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobFiltersView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobDetailView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/MyJobsView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/ProfileView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/PaymentsView.swift
+/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/RiggerHireApp.swift

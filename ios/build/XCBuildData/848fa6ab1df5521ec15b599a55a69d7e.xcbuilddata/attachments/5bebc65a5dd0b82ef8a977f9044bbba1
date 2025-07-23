@@ -1,0 +1,148 @@
+{
+  "" : {
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp-master.dia",
+    "emit-module-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp-master-emit-module.dia",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp-master.swiftdeps"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/ContentView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Models/Job.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/Job~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Models/User.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/User~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/RiggerHireApp.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/RiggerHireApp~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/APIService.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/APIService~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/AuthenticationManager.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/AuthenticationManager~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Services/JobManager.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobManager~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobDetailView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobDetailView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobFiltersView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobFiltersView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/JobsListView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/JobsListView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/LoginView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/MyJobsView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/MyJobsView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/PaymentsView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/PaymentsView~partial.swiftmodule"
+  },
+  "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/RiggerHireApp/Views/ProfileView.swift" : {
+    "const-values" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.d",
+    "diagnostics" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.dia",
+    "index-unit-output-path" : "/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.o",
+    "llvm-bc" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.bc",
+    "object" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.o",
+    "swift-dependencies" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView.swiftdeps",
+    "swiftmodule" : "/Users/tiaastor/tiation-rigger-hire-app/RiggerHireApp/ios/build/RiggerHireApp.build/Debug-iphoneos/RiggerHireApp.build/Objects-normal/arm64/ProfileView~partial.swiftmodule"
+  }
+}
