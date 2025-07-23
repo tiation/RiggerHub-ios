@@ -1,8 +1,25 @@
-# RiggerHireApp
+# RiggerHub iOS
 
-Enterprise-grade recruitment platform for the Western Australian construction and mining industries.
+🏗️ **A ChaseWhiteRabbit NGO Initiative**
 
-![Project Status](https://img.shields.io/badge/status-in%20development-blue)
+RiggerHub iOS is a comprehensive mobile solution designed for the management and coordination of rigger operations across various sectors, including construction, oil 6 gas, and heavy machinery industries in Western Australia. Our iOS app empowers operators and teams to efficiently execute strategic plans with real-time management tools.
+
+## 🎯 Project Purpose
+
+Aligned with ChaseWhiteRabbit NGO's mission to harness technology for greater good, RiggerHub iOS encapsulates our commitment to: 
+
+- **Facilitating** seamless project tasks 6 employee collaboration
+- **Enhancing** operational safety and compliance
+- **Empowering** users with robust analytics and performance monitoring tools
+
+## 🚀 Technology Stack
+
+- **Language**: Swift 5.9+
+- **UI Framework**: SwiftUI
+- **Architecture**: MVVM with Combine
+- **Minimum iOS Version**: iOS 15
+
+## Overview
 ![License](https://img.shields.io/badge/license-proprietary-red)
 ![WorkSafe WA](https://img.shields.io/badge/compliance-WorkSafe%20WA-green)
 ![Mobile Ready](https://img.shields.io/badge/platform-iOS%20%7C%20Android%20%7C%20Web-purple)

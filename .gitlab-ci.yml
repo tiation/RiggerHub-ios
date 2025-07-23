@@ -1,0 +1,213 @@
+stages:
+  - validate
+  - test
+  - build
+  - security
+  - deploy
+  - notify
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+cache:
+  paths:
+    - Pods/
+    - ~/.cocoapods/
+
+before_script:
+  - export LANG=en_US.UTF-8
+  - export LC_ALL=en_US.UTF-8
+
+# Validation Stage
+validate:
+  stage: validate
+  tags:
+    - ios
+    - macos
+  script:
+    - pod install --repo-update
+    - xcodebuild -workspace RiggerHub.xcworkspace -scheme RiggerHub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' clean build CODE_SIGNING_ALLOWED=NO
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
+  only:
+    - merge_requests
+    - main
+    - develop
+
+# Testing Stage
+test:unit:
+  stage: test
+  tags:
+    - ios
+    - macos
+  script:
+    - pod install --repo-update
+    - xcodebuild -workspace RiggerHub.xcworkspace -scheme RiggerHub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' test CODE_SIGNING_ALLOWED=NO
+    - xcrun xccov view --report --json $(find . -name "*.xccovreport") > coverage.json
+  artifacts:
+    reports:
+      junit: build/reports/junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - build/reports/
+      - coverage.json
+    expire_in: 1 week
+  coverage: '/Test Coverage: ([0-9.]+%)/'
+
+test:ui:
+  stage: test
+  tags:
+    - ios
+    - macos
+  script:
+    - pod install --repo-update
+    - xcodebuild -workspace RiggerHub.xcworkspace -scheme RiggerHubUITests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' test CODE_SIGNING_ALLOWED=NO
+  artifacts:
+    paths:
+      - build/reports/ui-tests/
+    expire_in: 1 week
+  allow_failure: true
+
+# Build Stage
+build:debug:
+  stage: build
+  tags:
+    - ios
+    - macos
+  script:
+    - pod install --repo-update
+    - xcodebuild -workspace RiggerHub.xcworkspace -scheme RiggerHub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -configuration Debug archive -archivePath build/RiggerHub-Debug.xcarchive CODE_SIGNING_ALLOWED=NO
+    - xcodebuild -exportArchive -archivePath build/RiggerHub-Debug.xcarchive -exportPath build/Debug -exportOptionsPlist ExportOptions-Debug.plist
+  artifacts:
+    paths:
+      - build/Debug/*.ipa
+    expire_in: 1 week
+  only:
+    - merge_requests
+    - develop
+
+build:release:
+  stage: build
+  tags:
+    - ios
+    - macos
+  script:
+    - pod install --repo-update
+    - xcodebuild -workspace RiggerHub.xcworkspace -scheme RiggerHub -sdk iphoneos -configuration Release archive -archivePath build/RiggerHub-Release.xcarchive
+    - xcodebuild -exportArchive -archivePath build/RiggerHub-Release.xcarchive -exportPath build/Release -exportOptionsPlist ExportOptions-Release.plist
+  artifacts:
+    paths:
+      - build/Release/*.ipa
+    expire_in: 4 weeks
+  only:
+    - main
+    - tags
+
+# Security Stage
+security:sast:
+  stage: security
+  tags:
+    - ios
+    - macos
+  script:
+    - swiftlint --reporter json > swiftlint-report.json || true
+    - lizard -l swift -o lizard-report.xml . || true
+  artifacts:
+    reports:
+      sast: swiftlint-report.json
+    paths:
+      - swiftlint-report.json
+      - lizard-report.xml
+    expire_in: 1 week
+  allow_failure: true
+
+security:dependency:
+  stage: security
+  tags:
+    - ios
+    - macos
+  script:
+    - pod audit --verbose || true
+    - carthage outdated --xcode-warnings || true
+  artifacts:
+    paths:
+      - dependency-audit.log
+    expire_in: 1 week
+  allow_failure: true
+
+# Deploy Stage
+deploy:testflight:
+  stage: deploy
+  tags:
+    - ios
+    - macos
+  script:
+    - echo "Uploading to TestFlight"
+    - xcrun altool --upload-app -f build/Release/*.ipa -t ios -u $APPLE_ID -p $APPLE_PASSWORD --verbose
+  environment:
+    name: testflight
+    url: https://appstoreconnect.apple.com
+  only:
+    - develop
+  when: manual
+
+deploy:appstore:
+  stage: deploy
+  tags:
+    - ios
+    - macos
+  script:
+    - echo "Deploying to App Store"
+    - xcrun altool --upload-app -f build/Release/*.ipa -t ios -u $APPLE_ID -p $APPLE_PASSWORD --verbose
+  environment:
+    name: production
+    url: https://apps.apple.com
+  only:
+    - main
+    - tags
+  when: manual
+
+# Enterprise Distribution
+deploy:enterprise:
+  stage: deploy
+  tags:
+    - ios
+    - macos
+  script:
+    - echo "Deploying enterprise distribution"
+    - aws s3 cp build/Release/*.ipa s3://$S3_BUCKET/ios/riggerhub/
+    - aws s3 cp manifest.plist s3://$S3_BUCKET/ios/riggerhub/
+  environment:
+    name: enterprise
+    url: https://$ENTERPRISE_DOMAIN/ios/riggerhub/
+  only:
+    - main
+  when: manual
+
+# Notification Stage
+notify:success:
+  stage: notify
+  image: alpine:latest
+  script:
+    - echo "Build completed successfully for RiggerHub iOS"
+    - 'curl -X POST -H "Content-Type: application/json" -d "{\"text\":\"✅ RiggerHub iOS: Build $CI_PIPELINE_ID completed successfully\"}" $SLACK_WEBHOOK_URL'
+  when: on_success
+  only:
+    - main
+
+notify:failure:
+  stage: notify
+  image: alpine:latest
+  script:
+    - echo "Build failed for RiggerHub iOS"
+    - 'curl -X POST -H "Content-Type: application/json" -d "{\"text\":\"❌ RiggerHub iOS: Build $CI_PIPELINE_ID failed\"}" $SLACK_WEBHOOK_URL'
+  when: on_failure
+  only:
+    - main
