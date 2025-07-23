@@ -1,122 +1,461 @@
-# RiggerHireApp API Documentation
+# API Documentation
 
-## API Overview
+## Overview
+This directory contains comprehensive API documentation for the Rigger ecosystem component. Our APIs follow RESTful design principles and include GraphQL endpoints for complex data operations.
 
-The RiggerHireApp API is organized around REST principles, with some real-time features implemented using WebSockets. All data is sent and received as JSON.
+## Base URLs
 
-## Base URL
-
-```
-Production: https://api.riggerhireapp.com/v1
-Development: https://dev-api.riggerhireapp.com/v1
-```
+### Environments
+- **Development**: `http://localhost:3000/api/v1`
+- **Staging**: `https://staging-api.rigger.sxc.codes/api/v1`
+- **Production**: `https://api.rigger.sxc.codes/api/v1`
 
 ## Authentication
 
-All API requests require authentication using JWT tokens. Include the token in the Authorization header:
+### JWT Authentication
+All API endpoints require authentication via JWT tokens.
 
+```bash
+# Include the token in the Authorization header
+Authorization: Bearer <your-jwt-token>
 ```
-Authorization: Bearer <your_jwt_token>
-```
 
-## API Endpoints
+### Authentication Endpoints
 
-### Authentication
-
+#### Login
 ```http
 POST /auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "securepassword123"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "user": {
+      "id": "uuid",
+      "email": "user@example.com",
+      "role": "user"
+    }
+  }
+}
+```
+
+#### Register
+```http
+POST /auth/register
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "securepassword123",
+  "firstName": "John",
+  "lastName": "Doe"
+}
+```
+
+#### Refresh Token
+```http
 POST /auth/refresh
-POST /auth/logout
+Authorization: Bearer <refresh-token>
 ```
 
-### Jobs
+## Core API Endpoints
 
+### Users API
+
+#### Get User Profile
 ```http
-GET /jobs
+GET /users/profile
+Authorization: Bearer <token>
+```
+
+#### Update User Profile
+```http
+PUT /users/profile
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "bio": "Professional rigger with 10+ years experience"
+}
+```
+
+### Jobs API
+
+#### List Jobs
+```http
+GET /jobs?page=1&limit=10&location=city&skill=rigging
+Authorization: Bearer <token>
+```
+
+**Query Parameters:**
+- `page` (integer): Page number (default: 1)
+- `limit` (integer): Items per page (default: 10, max: 100)
+- `location` (string): Filter by location
+- `skill` (string): Filter by required skill
+- `salary_min` (integer): Minimum salary filter
+- `salary_max` (integer): Maximum salary filter
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "jobs": [
+      {
+        "id": "uuid",
+        "title": "Senior Rigger",
+        "company": "Construction Corp",
+        "location": "New York, NY",
+        "salary": 75000,
+        "description": "Experienced rigger needed...",
+        "requirements": ["5+ years experience", "OSHA certification"],
+        "createdAt": "2025-01-01T00:00:00Z"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 10,
+      "total": 150,
+      "pages": 15
+    }
+  }
+}
+```
+
+#### Create Job Posting
+```http
 POST /jobs
-GET /jobs/{id}
-PUT /jobs/{id}
-DELETE /jobs/{id}
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "title": "Senior Rigger",
+  "company": "Construction Corp",
+  "location": "New York, NY",
+  "salary": 75000,
+  "description": "We are seeking an experienced rigger...",
+  "requirements": ["5+ years experience", "OSHA certification"],
+  "skills": ["rigging", "crane operation", "safety"]
+}
 ```
 
-### Workers
-
+#### Get Job Details
 ```http
-GET /workers
-POST /workers
-GET /workers/{id}
-PUT /workers/{id}
-DELETE /workers/{id}
+GET /jobs/{job_id}
+Authorization: Bearer <token>
 ```
 
-### Companies
-
+#### Apply to Job
 ```http
-GET /companies
-POST /companies
-GET /companies/{id}
-PUT /companies/{id}
-DELETE /companies/{id}
+POST /jobs/{job_id}/apply
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "coverLetter": "I am interested in this position because...",
+  "resumeUrl": "https://example.com/resume.pdf"
+}
 ```
 
-### Payments
+### Applications API
 
+#### Get User Applications
 ```http
-POST /payments/create
-GET /payments/{id}
-GET /payments/history
+GET /applications/user
+Authorization: Bearer <token>
 ```
 
-### Compliance
-
+#### Get Job Applications (Employer only)
 ```http
-POST /compliance/verify
-GET /compliance/status/{id}
-PUT /compliance/update/{id}
+GET /applications/job/{job_id}
+Authorization: Bearer <token>
 ```
 
-## WebSocket Events
+#### Update Application Status
+```http
+PUT /applications/{application_id}/status
+Authorization: Bearer <token>
+Content-Type: application/json
 
-```javascript
-// Job status updates
-socket.on('job:status', (data) => {
-    // Handle job status change
-});
+{
+  "status": "reviewed" // pending, reviewed, accepted, rejected
+}
+```
 
-// Worker availability updates
-socket.on('worker:availability', (data) => {
-    // Handle worker availability change
-});
+## GraphQL API
+
+### Endpoint
+```
+POST /graphql
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+### Example Queries
+
+#### Get User with Jobs
+```graphql
+query GetUserWithJobs($userId: ID!) {
+  user(id: $userId) {
+    id
+    email
+    firstName
+    lastName
+    profile {
+      bio
+      skills
+      certifications
+    }
+    applications {
+      id
+      status
+      job {
+        id
+        title
+        company
+        location
+      }
+    }
+  }
+}
+```
+
+#### Search Jobs with Filters
+```graphql
+query SearchJobs($filters: JobFilters!, $pagination: PaginationInput!) {
+  jobs(filters: $filters, pagination: $pagination) {
+    data {
+      id
+      title
+      company
+      location
+      salary
+      skills
+      createdAt
+    }
+    pagination {
+      page
+      limit
+      total
+      pages
+    }
+  }
+}
+```
+
+## Webhooks
+
+### Job Application Webhook
+When a user applies to a job, a webhook is sent to the employer's registered endpoint.
+
+```json
+{
+  "event": "job.application.created",
+  "timestamp": "2025-01-01T00:00:00Z",
+  "data": {
+    "applicationId": "uuid",
+    "jobId": "uuid",
+    "applicantId": "uuid",
+    "applicant": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com"
+    }
+  }
+}
 ```
 
 ## Error Handling
 
-All errors follow this format:
-
+### Standard Error Response
 ```json
 {
-    "error": {
-        "code": "error_code",
-        "message": "Human readable message",
-        "details": {}
-    }
+  "success": false,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "The provided data is invalid",
+    "details": [
+      {
+        "field": "email",
+        "message": "Email is required"
+      }
+    ]
+  }
 }
 ```
 
+### HTTP Status Codes
+- `200` - Success
+- `201` - Created
+- `400` - Bad Request
+- `401` - Unauthorized
+- `403` - Forbidden
+- `404` - Not Found
+- `422` - Validation Error
+- `429` - Rate Limited
+- `500` - Internal Server Error
+
 ## Rate Limiting
 
-- 1000 requests per hour for authenticated users
-- 60 requests per hour for unauthenticated users
+### Limits
+- **Authenticated requests**: 1000 requests per hour
+- **Public endpoints**: 100 requests per hour
+- **File uploads**: 10 uploads per hour
 
-## Documentation Tools
+### Headers
+```http
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 999
+X-RateLimit-Reset: 1609459200
+```
 
-- Full API documentation available via Swagger UI at `/docs`
-- OpenAPI specification available at `/docs/openapi.json`
+## Data Models
 
-## SDK Support
+### User Model
+```typescript
+interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  role: 'user' | 'employer' | 'admin';
+  profile?: UserProfile;
+  createdAt: string;
+  updatedAt: string;
+}
 
-- JavaScript/TypeScript
-- Swift
-- Kotlin
+interface UserProfile {
+  bio?: string;
+  skills: string[];
+  certifications: string[];
+  experience?: number;
+  location?: string;
+  avatarUrl?: string;
+}
+```
 
-[Additional documentation to be added]
+### Job Model
+```typescript
+interface Job {
+  id: string;
+  title: string;
+  company: string;
+  description: string;
+  requirements: string[];
+  skills: string[];
+  location: string;
+  salary?: number;
+  salaryRange?: {
+    min: number;
+    max: number;
+  };
+  employerId: string;
+  status: 'active' | 'paused' | 'closed';
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+### Application Model
+```typescript
+interface Application {
+  id: string;
+  jobId: string;
+  applicantId: string;
+  coverLetter?: string;
+  resumeUrl?: string;
+  status: 'pending' | 'reviewed' | 'accepted' | 'rejected';
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+## SDK and Libraries
+
+### JavaScript/TypeScript SDK
+```bash
+npm install @rigger/api-client
+```
+
+```javascript
+import { RiggerAPIClient } from '@rigger/api-client';
+
+const client = new RiggerAPIClient({
+  baseURL: 'https://api.rigger.sxc.codes',
+  apiKey: 'your-api-key'
+});
+
+// Get jobs
+const jobs = await client.jobs.list({
+  location: 'New York',
+  page: 1,
+  limit: 10
+});
+```
+
+### Python SDK
+```bash
+pip install rigger-api-client
+```
+
+```python
+from rigger_api import RiggerClient
+
+client = RiggerClient(
+    base_url='https://api.rigger.sxc.codes',
+    api_key='your-api-key'
+)
+
+# Get jobs
+jobs = client.jobs.list(location='New York', page=1, limit=10)
+```
+
+## Testing
+
+### Postman Collection
+Download our Postman collection: [Rigger API Collection](./postman/rigger-api.collection.json)
+
+### OpenAPI Specification
+Our complete API specification is available in OpenAPI 3.0 format: [openapi.yaml](./openapi.yaml)
+
+## Changelog
+
+### v1.2.0 (2025-01-15)
+- Added GraphQL endpoints
+- Enhanced job search filters
+- Improved error responses
+- Added webhook support
+
+### v1.1.0 (2025-01-01)
+- Added job applications API
+- Implemented rate limiting
+- Enhanced authentication
+- Added user profiles
+
+### v1.0.0 (2024-12-01)
+- Initial API release
+- Basic CRUD operations
+- JWT authentication
+- User and job management
+
+---
+
+**API Version**: v1.2.0
+**Last Updated**: January 2025
+**Maintained By**: Rigger API Team
+
+For API support and questions:
+- **Primary**: tiatheone@protonmail.com
+- **Technical**: garrett@sxc.codes
+- **Documentation**: [https://docs.rigger.sxc.codes](https://docs.rigger.sxc.codes)

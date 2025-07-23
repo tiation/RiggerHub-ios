@@ -1,90 +1,193 @@
-# RiggerHireApp Architecture
+# Architecture Documentation
 
-## System Overview
+## Overview
+This directory contains architectural documentation for the Rigger ecosystem component. The architecture follows enterprise-grade patterns and practices to ensure scalability, maintainability, and security.
 
-RiggerHireApp is built as a microservices-based architecture with the following key components:
+## System Architecture
+
+### High-Level Architecture
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Backend API   │    │   Database      │
+│   (React/      │◄──►│   (Node.js/     │◄──►│   (Supabase/    │
+│   Flutter)      │    │   Python)       │    │   PostgreSQL)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
 ### Core Components
 
-```mermaid
-graph TD
-    A[Mobile Apps] --> B[API Gateway]
-    C[Web Apps] --> B
-    B --> D[Authentication Service]
-    B --> E[Matching Service]
-    B --> F[Payment Service]
-    B --> G[Compliance Service]
-    B --> K[Notification Service]
-    E --> H[(Main DB)]
-    F --> I[(Payment DB)]
-    G --> J[(Compliance DB)]
-    K --> L[(Notification DB)]
+#### 1. Presentation Layer
+- **Responsibility**: User interface and user experience
+- **Technologies**: React.js, Flutter, React Native
+- **Patterns**: Component-based architecture, State management
+
+#### 2. Business Logic Layer
+- **Responsibility**: Core business rules and workflows
+- **Technologies**: Node.js, Python, TypeScript
+- **Patterns**: Service-oriented architecture, Domain-driven design
+
+#### 3. Data Layer
+- **Responsibility**: Data persistence and retrieval
+- **Technologies**: Supabase, PostgreSQL, Redis
+- **Patterns**: Repository pattern, CQRS
+
+### Security Architecture
+
+#### Authentication & Authorization
+- JWT-based authentication
+- Role-based access control (RBAC)
+- OAuth 2.0 integration
+- Multi-factor authentication (MFA)
+
+#### Data Protection
+- End-to-end encryption for sensitive data
+- Data classification and handling procedures
+- GDPR compliance measures
+- Audit logging and monitoring
+
+### Deployment Architecture
+
+#### Infrastructure
+- **Development**: Local Docker containers
+- **Staging**: Kubernetes on docker.sxc.codes (145.223.22.7)
+- **Production**: Multi-zone deployment with load balancing
+- **Monitoring**: Grafana dashboard on grafana.sxc.codes (153.92.214.1)
+
+#### CI/CD Pipeline
+```
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+│   Git    │───►│  GitLab  │───►│  Docker  │───►│   K8s    │
+│  Commit  │    │    CI    │    │  Build   │    │  Deploy  │
+└──────────┘    └──────────┘    └──────────┘    └──────────┘
 ```
 
-### Key Services
+### Integration Architecture
 
-1. **Authentication Service**
-   - User management
-   - Role-based access control
-   - JWT token handling
+#### External Services
+- **Supabase**: Backend-as-a-Service for database and auth
+- **Payment Processing**: Secure payment gateway integration
+- **Communication**: Email, SMS, and push notification services
+- **Analytics**: User behavior and system performance tracking
 
-2. **Matching Service**
-   - Worker availability tracking
-   - Job matching algorithm
-   - Real-time updates
+#### API Design
+- RESTful API design principles
+- GraphQL for complex data relationships
+- API versioning strategy
+- Rate limiting and throttling
+- Comprehensive API documentation
 
-3. **Payment Service**
-   - Stripe integration
-   - Payment processing
-   - Invoice generation
+### Performance Architecture
 
-4. **Compliance Service**
-   - Certification verification
-   - Safety compliance checks
-   - Document management
+#### Optimization Strategies
+- **Caching**: Redis for session and data caching
+- **CDN**: Content delivery network for static assets
+- **Database**: Query optimization and indexing
+- **Code Splitting**: Lazy loading for frontend components
 
-## Tech Stack Details
+#### Monitoring and Observability
+- **Logging**: Centralized logging with ELK stack (elastic.sxc.codes)
+- **Metrics**: Application and infrastructure metrics
+- **Tracing**: Distributed tracing for microservices
+- **Alerting**: Proactive monitoring and incident response
 
-### Mobile Applications
-- iOS: Swift/UIKit
-- Android: Kotlin/Jetpack Compose
+## Design Patterns
 
-### Web Applications
-- Framework: React with TypeScript
-- State Management: Redux
-- UI Components: Custom themed components
+### Frontend Patterns
+- **Component Composition**: Reusable UI components
+- **State Management**: Centralized state with Redux/MobX
+- **Lazy Loading**: Performance optimization
+- **Progressive Web App**: Offline capabilities
 
-### Backend Services
-- Runtime: Node.js
-- Language: TypeScript
-- API: GraphQL/REST
-- Database: PostgreSQL
-- Cache: Redis
+### Backend Patterns
+- **Microservices**: Service decomposition
+- **Event-Driven**: Asynchronous processing
+- **Repository Pattern**: Data access abstraction
+- **Factory Pattern**: Object creation abstraction
 
-### Infrastructure
-- Containerization: Docker
-- Orchestration: Kubernetes
-- CI/CD: GitHub Actions
-- Monitoring: Prometheus/Grafana
+### Data Patterns
+- **Database per Service**: Service isolation
+- **Event Sourcing**: Audit trail and state reconstruction
+- **CQRS**: Command Query Responsibility Segregation
+- **Saga Pattern**: Distributed transaction management
 
-## Security Architecture
+## Quality Attributes
 
-- End-to-end encryption for sensitive data
-- Role-based access control
-- Regular security audits
-- Compliance with Australian data protection standards
+### Scalability
+- Horizontal scaling capabilities
+- Load balancing and distribution
+- Auto-scaling based on demand
+- Performance benchmarks and targets
 
-## Deployment Architecture
+### Reliability
+- Fault tolerance and recovery
+- Backup and disaster recovery
+- Health checks and monitoring
+- SLA and uptime requirements
 
-[Deployment diagram to be added]
+### Security
+- Security by design principles
+- Threat modeling and risk assessment
+- Penetration testing and vulnerability scanning
+- Compliance with security standards
 
-## Data Flow
+### Maintainability
+- Clean code principles
+- Comprehensive testing strategy
+- Documentation and code comments
+- Refactoring and technical debt management
 
-[Data flow diagram to be added]
+## Technology Stack
+
+### Frontend Technologies
+- **Web**: React.js, TypeScript, Material-UI/Tailwind CSS
+- **Mobile**: Flutter (iOS/Android), React Native
+- **State Management**: Redux Toolkit, MobX
+- **Testing**: Jest, React Testing Library, Cypress
+
+### Backend Technologies
+- **Runtime**: Node.js, Python
+- **Frameworks**: Express.js, FastAPI, NestJS
+- **Database**: PostgreSQL, Redis, Elasticsearch
+- **Message Queue**: Redis, RabbitMQ
+
+### DevOps Technologies
+- **Containerization**: Docker, Docker Compose
+- **Orchestration**: Kubernetes, Helm
+- **CI/CD**: GitLab CI, GitHub Actions
+- **Monitoring**: Grafana, Prometheus, ELK Stack
+
+## Architecture Decisions
+
+### ADR (Architecture Decision Records)
+This section should contain links to specific architecture decision records that document important architectural choices and their rationale.
+
+### Trade-offs and Constraints
+- Performance vs. Cost optimization
+- Security vs. Usability balance
+- Scalability vs. Complexity considerations
+- Technology choices and vendor dependencies
 
 ## Future Considerations
 
-1. Scalability improvements
-2. AI/ML integration for better matching
-3. Blockchain for certification verification
-4. Enhanced mobile features
+### Roadmap Items
+- Migration to cloud-native architecture
+- Implementation of AI/ML capabilities
+- Enhanced real-time features
+- Advanced analytics and reporting
+
+### Technology Evolution
+- Framework and library upgrades
+- New technology adoption criteria
+- Legacy system modernization
+- Performance optimization initiatives
+
+---
+
+**Document Version**: 1.0
+**Last Updated**: January 2025
+**Maintained By**: Rigger Architecture Team
+**Review Cycle**: Quarterly
+
+For questions or updates to this architecture documentation, please contact:
+- **Primary**: tiatheone@protonmail.com
+- **Technical**: garrett@sxc.codes
